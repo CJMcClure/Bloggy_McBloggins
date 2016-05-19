@@ -53,11 +53,6 @@ class SQLib
           {
             return true;
           }
-
-        /*
-        Figure out how to return true or false, based on query response.
-        */
-
     }
     catch (PDOException $e)
     {
