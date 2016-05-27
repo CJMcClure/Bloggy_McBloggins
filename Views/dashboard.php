@@ -40,7 +40,20 @@ session_start();
 
       if($title != null && $body != null)
       {
+          include '../Models/blog.php';
 
+          $post = new Blog($title, $body);
+
+          $posted = $post->saveBlog($_SESSION['u_data']['uN']);
+
+          if($posted == true)
+          {
+            echo 'Post Added';
+          }
+          else
+          {
+            echo 'Post NOT Added';
+          }
       }
       else
       {

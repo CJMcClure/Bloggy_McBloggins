@@ -9,13 +9,12 @@
      {
         if((include "../Models/blog.create.php") == true)
         {
-          $hero = "Hero Image";
+
           $title = "Title";
           $post = "Post";
 
-          $newBlogPost = new Blogpost($hero, $title, $post);
+          $newBlogPost = new Blogpost($title, $post);
 
-          echo "<h1>".$newBlogPost->getHero()."</h1>\n\r";
           echo "<h1>".$newBlogPost->getTitle()."</h1>\n\r";
           echo "<h1>".$newBlogPost->getDate()."</h1>\n\r";
           echo "<h1>".$newBlogPost->getPost()."</h1>\n\r";

@@ -60,6 +60,24 @@ class Blog
     {
       return $this->post;
     }
+
+    public function saveBlog($_username)
+    {
+      include './sql.php';
+
+      $SQLib = new SQLib();
+
+      $added = $SQLib->userSendBlog($_username, $this->getTitle(), $this->getDate(), $this->getBody());
+
+      if($added == true)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
 }
 
 ?>

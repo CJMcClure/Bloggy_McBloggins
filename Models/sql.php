@@ -6,6 +6,35 @@ class SQLib
   protected $username = 'supermcbloggins';
   protected $password = 'r7KB1xd5';
 
+  function userPDOdb($_username)
+  {
+    try
+    {
+      $admin_connect = new PDO($this->dsn, $this->username, $this->password);
+
+      $query = "SELECT * FROM mcusers WHERE mcuser_username = \"$_username\"";
+
+      $retval = $admin_connect->exec($query);
+
+      foreach($retval as $row)
+      {
+        $p = $row['mcuser_password'];
+      }
+
+      $user_connect = new PDO($this->dsn, $_username, $p);
+
+      $admin_connect = null;
+
+      return $user_connect;
+    }
+    catch (Exception $e)
+    {
+        echo 'Connection failed: ' . $e->getMessage();
+    }
+
+
+  }
+
   /*
   Given a validated first and last name, email address,
   username, and password, will add a user to the blog
@@ -218,6 +247,30 @@ class SQLib
     catch (Exception $e)
     {
         echo 'Connection failed: ' . $e->getMessage();
+    }
+
+    function userSendBlog($_username, $_title, $_date, $_body)
+    {
+      try
+      {
+          $dbConnect = $this->userPDOdb($_username);
+
+          $tablename = $_username."_mcbloggins_blog";
+
+          $col1 = $username."_Title";
+          $col2 = $username."_Date";
+          $col3 = $username."_Post";
+
+          $query = "INSERT INTO $_tablename ($col1, $col2, $col3)
+                    VALUES ($_title, $_date, $_body)";
+
+          $dbConnect->exec($query);
+
+      }
+      catch (Exception $e)
+      {
+          echo 'Connection failed: ' . $e->getMessage();
+      }
     }
 
   }
