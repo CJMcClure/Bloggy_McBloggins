@@ -1,9 +1,17 @@
+<?
+  if(isset($_POST['register_now']))
+  {
+    include '../Controllers/register.php';
+  }
+?>
 <!DOCTYPEhtml>
 <html>
 <head>
   <title>McBloggins | Registration</title>
 </head>
 <body>
+  <h2>Welcome to Registration</h2>
+
   <form name='registration' method='post' action='<? echo htmlspecialchars($_POST['PHP_SELF']); ?>'>
     <label for='first'>First
     <span><? echo $first_error; ?></span>
@@ -35,7 +43,7 @@
     <input name='password_ver' type='password'/>
     </label>
 
-    <input name='register' type='submit' value='Submit'>
+    <input name='register_now' type='submit' value='Submit'>
   </form>
 </body>
 </html>

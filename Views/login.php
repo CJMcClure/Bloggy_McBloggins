@@ -1,17 +1,17 @@
-
 <?
-  if(file_exists('../Controllers/login.php'))
-  {
-    include '../Controllers/login.php';
-  }
+if(isset($_POST['submit']))
+{
+    include './Controllers/login.php';
+}
 ?>
-
 <!DOCTYPEhtml>
 <html>
 <head>
   <title>McBloggins | Login</title>
 </head>
 <body>
+  <h2>Welcome to McBloggins</h2>
+
   <form name='login' method='post' action="<? echo htmlspecialchars($_POST['PHP_SELF']); ?>">
 
     <label for='username'>Username</label>
@@ -23,7 +23,7 @@
     <input name='password' type='password'/>
 
     <input name='submit' type='submit' value='Login'/>
-    <input name='register' type='submit' value='Register'/>
+    <a href='/Views/register.php'>Register</a>
 
   </form>
 </body>

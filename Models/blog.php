@@ -1,6 +1,6 @@
 <?php
 
-class Blogpost
+class Blog
 {
     //MEMBER variables
     protected $hero;
@@ -10,21 +10,17 @@ class Blogpost
     protected $author;
 
     //Generic class constructor
-    function __construct($_hero, $_title, $_post)
+    function __construct($_title, $_post)
     {
-        $this->setHero($_hero);
         $this->setTitle($_title);
         $this->setDate($_date);
         $this->setPost($_post);
     }
 
     //Getter/Setter for $hero MEMBER
-    protected function setHero($_hero)
+    public function setHero($_hero)
     {
-      if(is_string($_hero))
-      {
         $this->hero = $_hero;
-      }
     }
 
     public function getHero()
@@ -33,12 +29,9 @@ class Blogpost
     }
 
     //Getter/Setter for $title MEMBER
-    protected function setTitle($_title)
+    public function setTitle($_title)
     {
-      if(is_string($_title))
-      {
         $this->title = $_title;
-      }
     }
 
     public function getTitle()
@@ -47,7 +40,7 @@ class Blogpost
     }
 
     //Getter/Setter for $date MEMBER
-    protected function setDate()
+    public function setDate()
     {
       $this->date = date("F j, Y");
     }
@@ -58,12 +51,9 @@ class Blogpost
     }
 
     //Getter/Setter for $post MEMBER
-    protected function setPost($_post)
+    public function setPost($_post)
     {
-      if(is_string($_post))
-      {
         $this->post = $_post;
-      }
     }
 
     public function getPost()

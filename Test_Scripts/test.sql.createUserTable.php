@@ -1,11 +1,11 @@
 <!DOCTYPEhtml>
 <html>
 <head>
-  <title>Username availability test</title>
+  <title>Blog User Test</title>
 </head>
 <body>
   <?
-    echo "test.sql.php reached. \n\r";
+    echo "test.sql.createUserTable.php reached. \n\r";
 
      if(file_exists("../Models/sql.php"))
      {
@@ -15,20 +15,15 @@
         {
           echo "file include reached. \n\r";
 
-          $username = '"cjmcclure"';
+          $username = 'mcstuffins';
+
+          $password = 'password';
 
           $SQLib_instance = new SQLib();
 
-          $response = $SQLib_instance->usernameAvailable($username);
+          $SQLib_instance->createUserTable($username, $password);
 
-          if($response == true)
-          {
-            echo 'true';
-          }
-          else
-          {
-            echo 'false';
-          }
+          echo 'finished';
         }
         else
         {

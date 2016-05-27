@@ -1,7 +1,7 @@
 <!DOCTYPEhtml>
 <html>
 <head>
-  <title>Username availability test</title>
+  <title>Blog User Test</title>
 </head>
 <body>
   <?
@@ -15,20 +15,11 @@
         {
           echo "file include reached. \n\r";
 
-          $username = '"cjmcclure"';
-
           $SQLib_instance = new SQLib();
 
-          $response = $SQLib_instance->usernameAvailable($username);
+          $SQLib_instance->addBlogPost('test', 'A new day', date('y/m/d'), 'The sun has risen, it will soon fall');
 
-          if($response == true)
-          {
-            echo 'true';
-          }
-          else
-          {
-            echo 'false';
-          }
+          echo "complete";
         }
         else
         {

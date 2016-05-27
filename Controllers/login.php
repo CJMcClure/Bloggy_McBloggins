@@ -1,46 +1,48 @@
 <?
-if(isset($_POST['submit']))
-{
-  if(file_exists('../Controllers/login.php'))
+  session_start();
+
+  include './Models/sql.php';
+
+  $mcuname = null;
+  $mcpword = null;
+
+  if($_POST['username'] != "")
   {
-     if((include '../Controllers/login.php') == true)
-     {
-       $username = $_POST['username'];
-       $password = $_POST['password'];
-
-
-     }
-     else
-     {
-         echo "File not included.";
-     }
+      $mcuname = $_POST['username'];
   }
   else
   {
-    echo "File doesn't exist!";
+    $username_error = '*Required';
   }
-}
 
-if(isset($_POST['register']))
-{
-  if(file_exists('../Views/register.php'))
+  if($_POST['password'] != "")
   {
-     if((include '../Views/register.php') == true)
-     {
-       $path_host = $_SERVER['HTTP_HOST'];
-       $path_dir  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-       $path_file = 'register.php';
-       header("Location: http://$path_host$path_dir/$path_file");
-       exit;
-     }
-     else
-     {
-         echo "File not included.";
-     }
+      $mcpword = $_POST['password'];
   }
   else
   {
-    echo "File doesn't exist!";
+      $password_error = '*Required';
   }
+
+  if($mcuname != null && $mcpword != null)
+  {
+    $sql_conn = new SQLib();
+
+    $retval = $sql_conn->userLogin($mcuname, $mcpword);
+
+    if($retval == false)
+    {
+      $password_error = '*Re-enter';
+      $username_error = '*Re-enter';
+    }
+    else
+    {
+      $sql_conn->setSession($mcuname);
+
+      header('Location: /Views/dashboard.php');
+      
+      exit;
+    }
 }
+
 ?>

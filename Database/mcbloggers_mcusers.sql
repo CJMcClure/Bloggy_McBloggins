@@ -34,7 +34,7 @@ CREATE TABLE `mcusers` (
   PRIMARY KEY (`mcuser_idnum`),
   UNIQUE KEY `mcuser_idnum_UNIQUE` (`mcuser_idnum`),
   UNIQUE KEY `mcuser_username_UNIQUE` (`mcuser_username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `mcusers` (
 
 LOCK TABLES `mcusers` WRITE;
 /*!40000 ALTER TABLE `mcusers` DISABLE KEYS */;
-INSERT INTO `mcusers` VALUES (3,'Casey','McClure','Casey.McClure@McCentric.com','CaseyJMcClure','password');
+INSERT INTO `mcusers` VALUES (3,'Casey','McClure','Casey.McClure@McCentric.com','CaseyJMcClure','password'),(12,'Kimberly','McClure','KimberlyKnowles11@gmail.com','KimmyMcClure','password');
 /*!40000 ALTER TABLE `mcusers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-10  0:50:36
+-- Dump completed on 2016-05-26 14:01:35
