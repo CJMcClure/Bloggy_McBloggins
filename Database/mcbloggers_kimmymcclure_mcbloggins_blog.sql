@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `mcbloggers` /*!40100 DEFAULT CHARACTER SET utf8 */;
+msCREATE DATABASE  IF NOT EXISTS `mcbloggers` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `mcbloggers`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
