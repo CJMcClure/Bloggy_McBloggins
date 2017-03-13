@@ -1,0 +1,5 @@
+---
+git:
+  dir: /var/www/bloggymcbloggins
+  repo: https://github.com/CJMcClure/Bloggy_McBloggins
+  branch: master
