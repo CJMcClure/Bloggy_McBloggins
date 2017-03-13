@@ -4,7 +4,7 @@ class SQLib
   //Database connection variables (PDO 'dsn' format)
   protected $dsn = 'mysql:dbname=mcbloggers;host=127.0.0.1';
   protected $username = 'supermcbloggins';
-  protected $password = 'r7KB1xd5';
+  protected $password = 'C10wn3&';
 
   function userPDOdb($_username)
   {
