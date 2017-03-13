@@ -4,7 +4,7 @@
   <title>Blogpost Object Test</title>
 </head>
 <body>
-  <?
+  <?php
      if(file_exists("../Models/blog.create.php"))
      {
         if((include "../Models/blog.create.php") == true)

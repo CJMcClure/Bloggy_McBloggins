@@ -1,4 +1,4 @@
-<?
+<?php
 class SQLib
 {
   //Database connection variables (PDO 'dsn' format)
