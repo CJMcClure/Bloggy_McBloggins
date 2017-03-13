@@ -1,14 +1,14 @@
-<?
+<?php
 session_start();
 ?>
 
 <!DOCTYPEhtml>
 <html>
 <head>
-<title><? echo $_SESSION['u_data']['uF'].'\'s'; ?> Dashboard</title>
+<title><?php echo $_SESSION['u_data']['uF'].'\'s'; ?> Dashboard</title>
 </head>
 <body>
-  <?
+  <?php
   include './components.php';
 
   $comp = new components();

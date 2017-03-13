@@ -1,4 +1,4 @@
-<?
+<?php
 class Validator
 {
   //Validates full legal name

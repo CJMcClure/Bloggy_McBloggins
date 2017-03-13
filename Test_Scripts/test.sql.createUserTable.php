@@ -4,7 +4,7 @@
   <title>Blog User Test</title>
 </head>
 <body>
-  <?
+  <?php
     echo "test.sql.createUserTable.php reached. \n\r";
 
      if(file_exists("../Models/sql.php"))
