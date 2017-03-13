@@ -1,4 +1,4 @@
-<?
+<?php
 class Author
 {
     //Class MEMBER variables

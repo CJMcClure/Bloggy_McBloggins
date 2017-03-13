@@ -1,4 +1,4 @@
-<?
+<?php
 class components
 {
   function menuBar()

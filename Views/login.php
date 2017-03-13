@@ -1,4 +1,4 @@
-<?
+<?php
 if(isset($_POST['submit']))
 {
     include './Controllers/login.php';
@@ -12,14 +12,14 @@ if(isset($_POST['submit']))
 <body>
   <h2>Welcome to McBloggins</h2>
 
-  <form name='login' method='post' action="<? echo htmlspecialchars($_POST['PHP_SELF']); ?>">
+  <form name='login' method='post' action="<?php echo htmlspecialchars($_POST['PHP_SELF']); ?>">
 
     <label for='username'>Username</label>
-    <span><? echo $username_error; ?></span>
+    <span><?php echo $username_error; ?></span>
     <input name='username' type='text'/>
 
     <label for='password'>Password</label>
-    <span><? echo $password_error; ?></span>
+    <span><?php echo $password_error; ?></span>
     <input name='password' type='password'/>
 
     <input name='submit' type='submit' value='Login'/>

@@ -4,7 +4,7 @@
   <title>Validation Script Testing</title>
 </head>
 <body>
-  <?
+  <?php
      if(file_exists("../Models/validator.php"))
      {
         echo "exists";
